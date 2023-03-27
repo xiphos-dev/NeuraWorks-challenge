@@ -6,13 +6,14 @@
 2. Modelo guardado AUC 0.587: `api/modelo_datos_adicionales.json`
 3. API: `api/api.py`
 4. Cliente API: `cliente.py`
+5. Script prueba wrk: `post.lua`
 
 ### Requerimientos
 * `Python 3.8`
 * Librerías: `pip install -r requirements.txt`
 
 
-### Consideraciones
+### Consideraciones y respuestas
 
 1. Para mantener el tiempo de ejecución reducido, se realizó un 5-fold nested cross validation. El espacio de búsqueda para los hiper-parámetros fue reducido, y solo unos pocos fueron considerados. La intención era demostrar una prueba de concepto: que este método puede aportar a mejorar los resultados obtenidos, sin necesariamente pagar el costo de tiempo de entrenamiento que tomaría aplicarlo de manera exhaustiva (con un N mayor y/o con un espacio de búqueda más grande para cada parámetro).
 
