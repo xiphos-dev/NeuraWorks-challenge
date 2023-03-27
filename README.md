@@ -17,7 +17,7 @@
 
 1. Para mantener el tiempo de ejecución reducido, se realizó un 5-fold nested cross validation. El espacio de búsqueda para los hiper-parámetros fue reducido, y solo unos pocos fueron considerados. La intención era demostrar una prueba de concepto: que este método puede aportar a mejorar los resultados obtenidos, sin necesariamente pagar el costo de tiempo de entrenamiento que tomaría aplicarlo de manera exhaustiva (con un N mayor y/o con un espacio de búqueda más grande para cada parámetro).
 
-2. El modelo rescatado a partir del Inciso 2 fue guardado en formato json (`api/modelo_datos_adicionales.json`) en lugar de ser serializado, por ejemplo, en formato binario. Esto es debido a que los modelos de la librería XGBoost no son "estables ni portables" al ser serializados con librerías como pickle: leer más aquí https://xgboost.readthedocs.io/en/latest/tutorials/saving_model.html
+2. El modelo rescatado a partir del Inciso 2 fue guardado en formato json (`api/modelo_datos_adicionales.json`) en lugar de ser serializado en formato binario. Esto es debido a que los modelos de la librería XGBoost no son "estables ni portables" al ser serializados con librerías como pickle: leer más aquí https://xgboost.readthedocs.io/en/latest/tutorials/saving_model.html
 
 3. Inciso 4: Para automatizar el proceso de build y deployment se puede recurrir a GitHub Actions, Kubernetes para la creación de la imagen de contenedor, y GCP para hospedar la API como un servicio en la nube. GCP permite tomar ventaja de la integración con elementos como Google Kubernetes Engine. El archivo `api/deploy.yaml` contiene un ejemplo de archivo de workflow para este proceso.
 
