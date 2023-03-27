@@ -2,7 +2,7 @@
 
 ## Análisis de modelo predictivo e implementación de API
 
-1. Análisis de modelo y propuestas de mejora: `notebook/to_expose.ipynb`
+1. Análisis de modelo y propuestas de mejora: `to_expose.ipynb`
 2. Modelo guardado AUC 0.587: `api/modelo_datos_adicionales.json`
 3. API: `api/api.py`
 4. Cliente API: `cliente.py`
