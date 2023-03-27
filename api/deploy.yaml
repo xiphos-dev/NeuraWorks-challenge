@@ -1,0 +1,35 @@
+name: Python API Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+      uses: 'actions/checkout@v3'
+
+    - name: Auth
+      uses: 'google-github-actions/auth@v1'
+      with:
+        workload_identity_provider: '${{ secrets.WIF_PROVIDER }}'
+        service_account: '${{ secrets.WIF_SERVICE_ACCOUNT }}'
+
+    - name: Install dependencies
+      run: |
+        'python -m pip install --upgrade pip'
+        'pip install -r requirements.txt'
+
+    - name: Deploy
+      uses: 'google-github-actions/deploy-cloudrun@v1'
+      with:
+        service: 'API-cloud-run'
+        image: 'gcr.io/cloudrun/API'
+
+
