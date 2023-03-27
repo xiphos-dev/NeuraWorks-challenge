@@ -5,7 +5,7 @@
 1. Análisis de modelo y propuestas de mejora: `notebook/to_expose.ipynb`
 2. Modelo guardado AUC 0.587: `api/modelo_datos_adicionales.json`
 3. API: `api/api.py`
-4. Cliente API: `cliente/cliente.py`
+4. Cliente API: `cliente.py`
 
 ### Requerimientos
 * `Python 3.8`
