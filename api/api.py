@@ -11,7 +11,7 @@ def predecir():
 
     datos = request.get_json()
     dataframe = pd.DataFrame.from_dict(datos)
-    data = dataframe[['OPERA', 'MES', 'TIPOVUELO', 'SIGLADES', 'DIANOM']]
+    data = dataframe[['OPERA', 'MES', 'TIPOVUELO', 'SIGLADES', 'DIA']]
     dataframe = pd.DataFrame(0, index=np.arange(len(datos['MES'])), columns=columnas)
     res = {}
     predicciones = modelo.predict(dar_formato(data,dataframe))
